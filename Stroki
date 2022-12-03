@@ -1,0 +1,23 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+ short Num = 0;
+ short SubstrPos;
+ string stroka, Str;
+ ifstream fin;
+ fin.open("F.txt");
+ cout << "Enter substring: ";
+ cin >> stroka;
+ while (!fin.eof()) {
+ Num++;
+ getline(fin, Str);
+ SubstrPos = Str.find(stroka);
+ if (SubstrPos != -1) {cout << Num << endl;}
+    }
+ fin.close();
+ return 0;
+}
