@@ -1,0 +1,60 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Torgash;
+class Man
+{
+   private:
+   int cash = 20000;
+   //friend void BuyChipCar(Man);
+   //friend void BuySuperCar(Man);
+   
+   public:
+   string name = "Abobus";
+   friend Torgash;
+};
+class Torgash
+{
+    public:
+    void vtuhat(Man);
+    private:
+    string name;
+};
+void Torgash::vtuhat (Man x)
+{
+    if (x.cash>30000) 
+    {
+    std::cout << "Втюхали дорого" << std::endl;
+    } 
+    else if (x.cash > 15000 & x.cash < 30000)
+    {
+    std::cout << "Втюхали по среднему прайсу" << std::endl;
+    }
+    if (x.cash < 15000)
+    {
+    std::cout << "Не втюхали" << std::endl;
+    }
+    
+}
+/*void BuySuperCar (Man x)
+{
+    if (x.cash>30000)
+    std::cout << "Купили дорогую машину" << std::endl;
+    else
+    std::cout << "Не хватает cash" << std::endl;
+}
+void BuyChipCar (Man x)
+{
+    if (x.cash>5000)
+    std::cout << "Купили дешевую машину" << std::endl;
+    else
+    std::cout << "Не хватает cash" << std::endl;
+}*/
+
+int main(){
+    Man norm;
+    Torgash ia;
+    ia.vtuhat(norm);
+    //BuyChipCar(norm);
+    
+}
